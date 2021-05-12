@@ -19,7 +19,7 @@
         <div class="col-md-6">
 
             <div class="card">
-                <table class="table">
+                <table class="table" *ngIf="selectedMovie">
                     <tr>
                         <td>Title</td>
                         <td>{{selectedMovie.title}}</td>
