@@ -18,7 +18,7 @@ export class MovielistingComponent implements OnInit {
 
   listing : Movie[] | any;
 
-  selectedMovie: Movie | any;
+
 
   constructor(private movieService: MovieService) { }
 
@@ -26,14 +26,22 @@ export class MovielistingComponent implements OnInit {
 
    // this.selectedMovie = this.listing[0];
 
+   this.GetMovies();
+
+  } // ngOnInit
+  
+  selectedMovie: Movie | any;
+  GetMovies() {
+
     this.movieService.getMovies().subscribe(movies => {
 
       this.listing = movies;
 
       this.selectedMovie = this.listing[0];
     })
+  }
 
-  } // ngOnInit
+
 
   message: string = `No message yet`;
   selectMovie(movie: Movie): void {
